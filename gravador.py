@@ -11,6 +11,7 @@ os.dup2(devnull, sys.stderr.fileno())
 def gravar():
     audio = pyaudio.PyAudio()   
 
+    #Tirado da documentação
     stream = audio.open(
         input=True,
         format= constantes.FORMAT,
@@ -34,6 +35,7 @@ def gravar():
     stream.close()
     audio.terminate()
 
+    #Cria o arquivo entrada.wav
     with wave.open("entrada.wav", "wb") as entrada:
         entrada.setnchannels(constantes.CHANNELS)
         entrada.setframerate(constantes.RATE)
